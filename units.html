@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Math Console</title>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="title" content="Math Console">
+
+  <meta name="keywords" content="math console, console, cli, mathjs, math.js, math, js, javascript, node, library, expression, parser, numeric, number, bignumber, complex, matrix, unit, function, variable, string, value, node.js, mathematics, extensive, advanced, mathematical">
+  <meta name="description" content="Math Console is a Mathematical-powered console to evaluate basic arithmetic operations, common math functions and also to convert a math unit to another.">
+
+  <meta name="author" content="Heiswayi Nrird">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/commandline.css" rel="stylesheet" type="text/css">
+
+  <script src="js/es5-shim.min.js" type="text/javascript"></script>
+  <script src="js/es5-sham.min.js" type="text/javascript"></script>
+  <script src="js/math.js" type="text/javascript"></script>
+  <script src="js/commandline.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="page">
+
+  <div id="content">
+
+<a href="index.html" class="nav">&larr; Go Back</a>
+
+ <h1>Units</h1>
+    <p>
+      <span class="brand">Math Console</span> supports units. Units can be used in basic arithmetic
+      operations like add and subtract, and units can be converted from
+      one to another.
+    </p>
+
+    <div id="commandline">Loading a console...</div>
+    <script type="text/javascript">
+      var editor = new CommandLineEditor({
+          container: document.getElementById('commandline'),
+          math: math,
+          exprdata: [
+            '3 inch in cm',
+            '0.35kg + 22g',
+            '2 inch + 5 m',
+            'sin(45 deg)',
+            '7 ft in cm'
+          ]
+      });
+    </script>
+
+    <p>
+      All available units are listed in the table below.
+    </p>
+
+    <table class="help">
+      <tr>
+        <th class="help">Base</th>
+        <th class="help">Units</th>
+      </tr>
+      <tr>
+        <td class="help">Length</td>
+        <td class="help">meter (m), inch (in), foot (ft), yard (yd), mile (mi),
+          link (li), rod (rd), chain (ch), angstrom, mil</td>
+      </tr>
+      <tr>
+        <td class="help">Surface</td>
+        <td class="help">m2, sqin, sqft, sqyd, sqmi, sqrd, sqch, sqmil</td>
+      </tr>
+      <tr>
+        <td class="help">Volume</td>
+        <td class="help">m3, litre (l, L, lt, liter), cc, cuin, cuft, cuyd, teaspoon, tablespoon</td>
+      </tr>
+      <tr>
+        <td class="help">Liquid volume</td>
+        <td class="help">minim (min), fluiddram (fldr), fluidounce (floz),
+          gill (gi), cup (cp), pint (pt), quart (qt), gallon (gal), beerbarrel (bbl),
+          oilbarrel (obl), hogshead, drop (gtt)</td>
+      </tr>
+      <tr>
+        <td class="help">Angles</td>
+        <td class="help">rad, deg, grad, cycle</td>
+      </tr>
+      <tr>
+        <td class="help">Time</td>
+        <td class="help">second (s, seconds),  minute (minutes), hour (h, hours), day (days)</td>
+      </tr>
+      <tr>
+        <td class="help">Mass</td>
+        <td class="help">gram(g), tonne, ton, grain (gr), dram(dr), ounce (oz),
+          poundmass (lbm, lb, lbs), hundredweight (cwt), stick</td>
+      </tr>
+      <tr>
+        <td class="help">Electric current</td>
+        <td class="help">ampere (A)</td>
+      </tr>
+      <tr>
+        <td class="help">Temperature</td>
+        <td class="help">kelvin (K), celsius (degC), fahrenheit (degF), rankine (degR)</td>
+      </tr>
+      <tr>
+        <td class="help">Amount of substance</td>
+        <td class="help">mole (mol)</td>
+      </tr>
+      <tr>
+        <td class="help">Luminous intensity</td>
+        <td class="help">candela (cd)</td>
+      </tr>
+      <tr>
+        <td class="help">Force</td>
+        <td class="help">newton (N), poundforce (lbf)</td>
+      </tr>
+      <tr>
+        <td class="help">Binary</td>
+        <td class="help">bit (b), byte (B)</td>
+      </tr>
+    </table>
+  </div>
+
+  </div>
+
+</div>
+
+</div>
+
+<div id="footer">
+ Made with fun by <a href="http://heiswayi.github.io/about">Heiswayi Nrird</a> based on <a href="http://mathjs.org">math.js</a>
+</div>
+
+<script type="text/javascript">
+  // change layout for different screen sizes
+  function resize () {
+    var width = document.body.clientWidth;
+
+    var page = document.getElementById('page');
+    page.className = (width < 810) ? 'small' : 'normal';
+    if (width < 620) {
+      page.className += ' tiny';
+    }
+  }
+  resize();
+  window.onresize = resize;
+</script>
+
+</body>
+</html>

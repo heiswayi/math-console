@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Math Console</title>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="title" content="Math Console">
+
+  <meta name="keywords" content="math console, console, cli, mathjs, math.js, math, js, javascript, node, library, expression, parser, numeric, number, bignumber, complex, matrix, unit, function, variable, string, value, node.js, mathematics, extensive, advanced, mathematical">
+  <meta name="description" content="Math Console is a Mathematical-powered console to evaluate basic arithmetic operations, common math functions and also to convert a math unit to another.">
+
+  <meta name="author" content="Heiswayi Nrird">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/commandline.css" rel="stylesheet" type="text/css">
+
+  <script src="js/es5-shim.min.js" type="text/javascript"></script>
+  <script src="js/es5-sham.min.js" type="text/javascript"></script>
+  <script src="js/math.js" type="text/javascript"></script>
+  <script src="js/commandline.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="page">
+
+  <div id="content">
+
+<a href="index.html" class="nav">&larr; Go Back</a>
+
+<p>
+        <span class="brand">Math Console</span> supports all common functions
+        (such as <code>sin</code>, <code>sqrt</code>, <code>exp</code>)
+        and operators (such as <code>a + b</code>, <code>a - b</code>,
+        <code>a * b</code>, <code>a / b</code>).
+        Parts of the expression can be enclosed in brackets
+        <code>(...)</code> to override the default order of calculation.
+      </p>
+
+      <div id="commandline">Loading a console...</div>
+    <script type="text/javascript">
+      var editor = new CommandLineEditor({
+          container: document.getElementById('commandline'),
+          math: math,
+          exprdata: [
+            '2.4 * (3.2 + 1.5)',
+            'sqrt(17)',
+            'log(200, 2 + 5)'
+          ]
+      });
+      function displayFunction(func) {
+          document.getElementById('exprInput').value = 'clear';
+          document.getElementById('exprInputEval').click();
+          document.getElementById('exprInput').value = 'help('+func+')';
+          document.getElementById('exprInputEval').click();
+      }
+    </script>
+
+      <p>
+        All available functions are listed below, click any function for examples.
+      </p>
+      <div id="functions"><table class="help"><tbody><tr><th class="help">Category</th><th class="help">Functions</th></tr><tr><td class="help">Arithmetic</td><td class="help"><a href="javascript: displayFunction('abs')">abs</a>, <a href="javascript: displayFunction('ceil')">ceil</a>, <a href="javascript: displayFunction('cube')">cube</a>, <a href="javascript: displayFunction('exp')">exp</a>, <a href="javascript: displayFunction('fix')">fix</a>, <a href="javascript: displayFunction('floor')">floor</a>, <a href="javascript: displayFunction('gcd')">gcd</a>, <a href="javascript: displayFunction('lcm')">lcm</a>, <a href="javascript: displayFunction('log')">log</a>, <a href="javascript: displayFunction('log10')">log10</a>, <a href="javascript: displayFunction('norm')">norm</a>, <a href="javascript: displayFunction('nthRoot')">nthRoot</a>, <a href="javascript: displayFunction('round')">round</a>, <a href="javascript: displayFunction('sign')">sign</a>, <a href="javascript: displayFunction('sqrt')">sqrt</a>, <a href="javascript: displayFunction('square')">square</a>, <a href="javascript: displayFunction('xgcd')">xgcd</a></td></tr><tr><td class="help">Bitwise</td><td class="help"><a href="javascript: displayFunction('bitAnd')">bitAnd</a>, <a href="javascript: displayFunction('bitNot')">bitNot</a>, <a href="javascript: displayFunction('bitOr')">bitOr</a>, <a href="javascript: displayFunction('bitXor')">bitXor</a>, <a href="javascript: displayFunction('leftShift')">leftShift</a>, <a href="javascript: displayFunction('rightArithShift')">rightArithShift</a>, <a href="javascript: displayFunction('rightLogShift')">rightLogShift</a></td></tr><tr><td class="help">Complex</td><td class="help"><a href="javascript: displayFunction('arg')">arg</a>, <a href="javascript: displayFunction('conj')">conj</a>, <a href="javascript: displayFunction('im')">im</a>, <a href="javascript: displayFunction('re')">re</a></td></tr><tr><td class="help">Constants</td><td class="help"><a href="javascript: displayFunction('E')">E</a>, <a href="javascript: displayFunction('Infinity')">Infinity</a>, <a href="javascript: displayFunction('LN10')">LN10</a>, <a href="javascript: displayFunction('LN2')">LN2</a>, <a href="javascript: displayFunction('LOG10E')">LOG10E</a>, <a href="javascript: displayFunction('LOG2E')">LOG2E</a>, <a href="javascript: displayFunction('NaN')">NaN</a>, <a href="javascript: displayFunction('PI')">PI</a>, <a href="javascript: displayFunction('SQRT1_2')">SQRT1_2</a>, <a href="javascript: displayFunction('SQRT2')">SQRT2</a>, <a href="javascript: displayFunction('e')">e</a>, <a href="javascript: displayFunction('false')">false</a>, <a href="javascript: displayFunction('i')">i</a>, <a href="javascript: displayFunction('null')">null</a>, <a href="javascript: displayFunction('phi')">phi</a>, <a href="javascript: displayFunction('pi')">pi</a>, <a href="javascript: displayFunction('tau')">tau</a>, <a href="javascript: displayFunction('true')">true</a>, <a href="javascript: displayFunction('version')">version</a></td></tr><tr><td class="help">Expression</td><td class="help"><a href="javascript: displayFunction('eval')">eval</a>, <a href="javascript: displayFunction('help')">help</a></td></tr><tr><td class="help">Logical</td><td class="help"><a href="javascript: displayFunction('and')">and</a>, <a href="javascript: displayFunction('not')">not</a>, <a href="javascript: displayFunction('or')">or</a>, <a href="javascript: displayFunction('xor')">xor</a></td></tr><tr><td class="help">Matrix</td><td class="help"><a href="javascript: displayFunction('concat')">concat</a>, <a href="javascript: displayFunction('cross')">cross</a>, <a href="javascript: displayFunction('det')">det</a>, <a href="javascript: displayFunction('diag')">diag</a>, <a href="javascript: displayFunction('dot')">dot</a>, <a href="javascript: displayFunction('eye')">eye</a>, <a href="javascript: displayFunction('flatten')">flatten</a>, <a href="javascript: displayFunction('inv')">inv</a>, <a href="javascript: displayFunction('ones')">ones</a>, <a href="javascript: displayFunction('resize')">resize</a>, <a href="javascript: displayFunction('size')">size</a>, <a href="javascript: displayFunction('squeeze')">squeeze</a>, <a href="javascript: displayFunction('subset')">subset</a>, <a href="javascript: displayFunction('transpose')">transpose</a>, <a href="javascript: displayFunction('zeros')">zeros</a></td></tr><tr><td class="help">Operators</td><td class="help"><a href="javascript: displayFunction('add')">add</a>, <a href="javascript: displayFunction('divide')">divide</a>, <a href="javascript: displayFunction('dotDivide')">dotDivide</a>, <a href="javascript: displayFunction('dotMultiply')">dotMultiply</a>, <a href="javascript: displayFunction('dotPow')">dotPow</a>, <a href="javascript: displayFunction('mod')">mod</a>, <a href="javascript: displayFunction('multiply')">multiply</a>, <a href="javascript: displayFunction('pow')">pow</a>, <a href="javascript: displayFunction('subtract')">subtract</a>, <a href="javascript: displayFunction('unaryMinus')">unaryMinus</a>, <a href="javascript: displayFunction('unaryPlus')">unaryPlus</a></td></tr><tr><td class="help">Probability</td><td class="help"><a href="javascript: displayFunction('combinations')">combinations</a>, <a href="javascript: displayFunction('factorial')">factorial</a>, <a href="javascript: displayFunction('gamma')">gamma</a>, <a href="javascript: displayFunction('permutations')">permutations</a>, <a href="javascript: displayFunction('pickRandom')">pickRandom</a>, <a href="javascript: displayFunction('random')">random</a>, <a href="javascript: displayFunction('randomInt')">randomInt</a></td></tr><tr><td class="help">Relational</td><td class="help"><a href="javascript: displayFunction('compare')">compare</a>, <a href="javascript: displayFunction('deepEqual')">deepEqual</a>, <a href="javascript: displayFunction('equal')">equal</a>, <a href="javascript: displayFunction('larger')">larger</a>, <a href="javascript: displayFunction('largerEq')">largerEq</a>, <a href="javascript: displayFunction('smaller')">smaller</a>, <a href="javascript: displayFunction('smallerEq')">smallerEq</a>, <a href="javascript: displayFunction('unequal')">unequal</a></td></tr><tr><td class="help">Statistics</td><td class="help"><a href="javascript: displayFunction('max')">max</a>, <a href="javascript: displayFunction('mean')">mean</a>, <a href="javascript: displayFunction('median')">median</a>, <a href="javascript: displayFunction('min')">min</a>, <a href="javascript: displayFunction('prod')">prod</a>, <a href="javascript: displayFunction('std')">std</a>, <a href="javascript: displayFunction('sum')">sum</a>, <a href="javascript: displayFunction('var')">var</a></td></tr><tr><td class="help">Trigonometry</td><td class="help"><a href="javascript: displayFunction('acos')">acos</a>, <a href="javascript: displayFunction('asin')">asin</a>, <a href="javascript: displayFunction('atan')">atan</a>, <a href="javascript: displayFunction('atan2')">atan2</a>, <a href="javascript: displayFunction('cos')">cos</a>, <a href="javascript: displayFunction('cosh')">cosh</a>, <a href="javascript: displayFunction('cot')">cot</a>, <a href="javascript: displayFunction('coth')">coth</a>, <a href="javascript: displayFunction('csc')">csc</a>, <a href="javascript: displayFunction('csch')">csch</a>, <a href="javascript: displayFunction('sec')">sec</a>, <a href="javascript: displayFunction('sech')">sech</a>, <a href="javascript: displayFunction('sin')">sin</a>, <a href="javascript: displayFunction('sinh')">sinh</a>, <a href="javascript: displayFunction('tan')">tan</a>, <a href="javascript: displayFunction('tanh')">tanh</a></td></tr><tr><td class="help">Type</td><td class="help"><a href="javascript: displayFunction('bignumber')">bignumber</a>, <a href="javascript: displayFunction('boolean')">boolean</a>, <a href="javascript: displayFunction('complex')">complex</a>, <a href="javascript: displayFunction('index')">index</a>, <a href="javascript: displayFunction('matrix')">matrix</a>, <a href="javascript: displayFunction('number')">number</a>, <a href="javascript: displayFunction('range')">range</a>, <a href="javascript: displayFunction('string')">string</a>, <a href="javascript: displayFunction('unit')">unit</a></td></tr><tr><td class="help">Units</td><td class="help"><a href="javascript: displayFunction('to')">to</a></td></tr><tr><td class="help">Utils</td><td class="help"><a href="javascript: displayFunction('clone')">clone</a>, <a href="javascript: displayFunction('filter')">filter</a>, <a href="javascript: displayFunction('forEach')">forEach</a>, <a href="javascript: displayFunction('format')">format</a>, <a href="javascript: displayFunction('import')">import</a>, <a href="javascript: displayFunction('map')">map</a>, <a href="javascript: displayFunction('sort')">sort</a>, <a href="javascript: displayFunction('typeof')">typeof</a></td></tr></tbody></table></div>
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="footer">
+ Made with fun by <a href="http://heiswayi.github.io/about">Heiswayi Nrird</a> based on <a href="http://mathjs.org">math.js</a>
+</div>
+
+<script type="text/javascript">
+  // change layout for different screen sizes
+  function resize () {
+    var width = document.body.clientWidth;
+
+    var page = document.getElementById('page');
+    page.className = (width < 810) ? 'small' : 'normal';
+    if (width < 620) {
+      page.className += ' tiny';
+    }
+  }
+  resize();
+  window.onresize = resize;
+</script>
+
+</body>
+</html>

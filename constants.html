@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Math Console</title>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="title" content="Math Console">
+
+  <meta name="keywords" content="math console, console, cli, mathjs, math.js, math, js, javascript, node, library, expression, parser, numeric, number, bignumber, complex, matrix, unit, function, variable, string, value, node.js, mathematics, extensive, advanced, mathematical">
+  <meta name="description" content="Math Console is a Mathematical-powered console to evaluate basic arithmetic operations, common math functions and also to convert a math unit to another.">
+
+  <meta name="author" content="Heiswayi Nrird">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/commandline.css" rel="stylesheet" type="text/css">
+
+  <script src="js/es5-shim.min.js" type="text/javascript"></script>
+  <script src="js/es5-sham.min.js" type="text/javascript"></script>
+  <script src="js/math.js" type="text/javascript"></script>
+  <script src="js/commandline.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="page">
+
+  <div id="content">
+
+<a href="index.html" class="nav">&larr; Go Back</a>
+
+<p>
+        <span class="brand">Math Console</span> supports some of constants such as <code>pi</code>, <code>tau</code>, <code>phi</code> and etc..
+      </p>
+
+      <div id="commandline">Loading a console...</div>
+    <script type="text/javascript">
+      var editor = new CommandLineEditor({
+          container: document.getElementById('commandline'),
+          math: math,
+          exprdata: [
+            'e',
+            'i*i',
+            'pi',
+            'tau',
+            'log2'
+          ]
+      });
+      function displayFunction(func) {
+          document.getElementById('exprInput').value = 'clear';
+          document.getElementById('exprInputEval').click();
+          document.getElementById('exprInput').value = 'help('+func+')';
+          document.getElementById('exprInputEval').click();
+      }
+    </script>
+
+
+<p>The table below shows how some of constants work.</p>
+
+<table><thead>
+<tr>
+<th>Constant</th>
+<th>Description</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>e</code>, <code>E</code></td>
+<td>Euler&#39;s number, the base of the natural logarithm.</td>
+<td>2.718281828459045</td>
+</tr>
+<tr>
+<td><code>i</code></td>
+<td>Imaginary unit, defined as i*i=-1. A complex number is described as a + b*i, where a is the real part, and b is the imaginary part.</td>
+<td><code>sqrt(-1)</code></td>
+</tr>
+<tr>
+<td><code>Infinity</code></td>
+<td>Infinity, a number which is larger than the maximum number that can be handled by a floating point number.</td>
+<td><code>Infinity</code></td>
+</tr>
+<tr>
+<td><code>LN2</code></td>
+<td>Returns the natural logarithm of 2.</td>
+<td><code>0.6931471805599453</code></td>
+</tr>
+<tr>
+<td><code>LN10</code></td>
+<td>Returns the natural logarithm of 10.</td>
+<td><code>2.302585092994046</code></td>
+</tr>
+<tr>
+<td><code>LOG2E</code></td>
+<td>Returns the base-2 logarithm of E.</td>
+<td><code>1.4426950408889634</code></td>
+</tr>
+<tr>
+<td><code>LOG10E</code></td>
+<td>Returns the base-10 logarithm of E.</td>
+<td><code>0.4342944819032518</code></td>
+</tr>
+<tr>
+<td><code>NaN</code></td>
+<td>Not a number.</td>
+<td><code>NaN</code></td>
+</tr>
+<tr>
+<td><code>null</code></td>
+<td>Value null.</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>phi</code></td>
+<td>Phi is the golden ratio. Two quantities are in the golden ratio if their ratio is the same as the ratio of their sum to the larger of the two quantities. Phi is defined as <code>(1 + sqrt(5)) / 2</code></td>
+<td><code>1.618033988749895</code></td>
+</tr>
+<tr>
+<td><code>pi</code>, <code>PI</code></td>
+<td>The number pi is a mathematical constant that is the ratio of a circle\&#39;s circumference to its diameter.</td>
+<td><code>3.141592653589793</code></td>
+</tr>
+<tr>
+<td><code>SQRT1_2</code></td>
+<td>Returns the square root of 1/2.</td>
+<td><code>0.7071067811865476</code></td>
+</tr>
+<tr>
+<td><code>SQRT2</code></td>
+<td>Returns the square root of 2.</td>
+<td><code>1.4142135623730951</code></td>
+</tr>
+<tr>
+<td><code>tau</code></td>
+<td>Tau is the ratio constant of a circle\&#39;s circumference to radius, equal to <code>2 * pi</code>.</td>
+<td><code>6.283185307179586</code></td>
+</tr>
+<tr>
+<td><code>uninitialized</code></td>
+<td>Constant used as default value when resizing a matrix to leave new entries uninitialized.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td>Returns the version number of math.js.</td>
+<td>For example <code>0.24.1</code></td>
+</tr>
+</tbody></table>
+
+  </div>
+
+</div>
+
+</div>
+
+<div id="footer">
+ Made with fun by <a href="http://heiswayi.github.io/about">Heiswayi Nrird</a> based on <a href="http://mathjs.org">math.js</a>
+</div>
+
+<script type="text/javascript">
+  // change layout for different screen sizes
+  function resize () {
+    var width = document.body.clientWidth;
+
+    var page = document.getElementById('page');
+    page.className = (width < 810) ? 'small' : 'normal';
+    if (width < 620) {
+      page.className += ' tiny';
+    }
+  }
+  resize();
+  window.onresize = resize;
+</script>
+
+</body>
+</html>
