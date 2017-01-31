@@ -4,6 +4,6 @@ Math Console is a Mathematical-powered console to evaluate basic arithmetic oper
 
 http://heiswayi.github.io/math-console
 
-## License
+### License
 
 [MIT](LICENSE.md)
